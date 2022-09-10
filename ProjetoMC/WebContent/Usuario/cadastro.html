@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="../css/forms-style.css">
+<title>Cadastro</title>
+</head>
+<body>
+	<div class="main-box">
+		<div class="title-box">
+			<h1>Cadastre-se</h1>
+		</div>
+		<div>
+			<form action="respCadUsuario.jsp" name="formCad" id="formCad"
+				method="post">
+				<input type="text" name="nome" placeholder="Nome">
+				<input type="email" name="email" placeholder="E-mail"> 
+				<input type="password" name="senha" placeholder="Senha">
+				<!-- <input type="password" name="confirmar" placeholder="Confirmar senha">  -->
+				<input type="submit" value="Cadastrar">
+			</form>
+		</div>
+		<p>
+			Já tem uma conta? <a href="../login.html">Entre</a>
+		</p>
+		<a href="../index.html"><img src="../img/home.png" alt="Voltar"></a>
+		<br>
+	</div>
+</body>
+</html>

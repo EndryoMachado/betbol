@@ -1,0 +1,90 @@
+body {
+	display: flex;
+	flex-direction: column;
+}
+
+.main-box {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 100px auto;
+	width: 30%;
+	height: 60%;
+	min-width: 250px;
+	border-radius: 10px;
+	border: 1px solid black;
+	background-color: whitesmoke;
+	text-align: center;
+}
+
+.title-box {
+	background-color: green;
+	color: white;
+	text-align: center;
+	border-radius: 6px 6px 0px 0;
+	width: 100%;
+}
+
+
+form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 10px;
+}
+
+input {
+	width: 60%;
+	margin: 5px auto;
+}
+
+input[type=submit], input[type=button] {
+	width: 40%;
+	margin: 5px auto;
+	height: 20%;
+	background-color: darkgreen;
+	color: #FFFFFF;
+	border-radius: 10px;
+	border: solid darkgreen;
+}
+
+input[type=submit]:hover, input[type=button]:hover {
+	border-style: solid;
+	color: lightgreen;
+}
+
+input:focus {
+	border-style: solid;
+	border-color: green;
+	box-shadow: none;
+	outline: 0;
+}
+
+a {
+	text-decoration: none;
+	color: green;
+}
+
+img {
+	width: 30px;
+	height: 30px;
+}
+
+/*Estilização de tabelas*/
+table{
+	margin: auto;
+	width: 70%;
+	border-collapse: collapse;
+	border: 2px solid black;
+	
+}
+  
+th{
+	padding: 5px;
+}
+
+.tabTitulo{
+	color: white;
+	background-color: green;
+	font-weight: bold;
+}
