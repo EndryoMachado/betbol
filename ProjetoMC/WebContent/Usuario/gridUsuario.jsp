@@ -1,7 +1,9 @@
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="modelo.Usuario"%>
+<%@page import="modelo.Telefone"%>
 <%@page import="dao.UsuarioDao"%>
+<%@page import="dao.TelefoneDao"%>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -60,18 +62,23 @@ input[type=submit]:hover, input[type=button]:hover {
                         <tr class="tabTitulo">
                             <th>Nome</th>
                             <th>Email</th>
+                            <th>Telefone</th>
                             <th>Senha</th>
                             <th>Alterar</th>
                             <th>Deletar</th>
                         </tr>
                         <%
                             UsuarioDao usuarioDao = new UsuarioDao();
+                        	TelefoneDao telefoneDao = new TelefoneDao();
                             ArrayList<Usuario> usuario = usuarioDao.ArrayListarUsuario();
                             for (Usuario a: usuario){
+                            	Telefone telefone = new Telefone();
+                            	telefone = telefoneDao.ListaTelefoneID(a.getTelefone());
                             %>
                         <tr>
                             <th style="text-align: left;"><%=a.getNome_usuario() %></th>
                             <th><%=a.getEmail()%></th>
+                            <th><%=telefone.getNumero() %></th>
                             <th><%=a.getSenha()%></th>
                             <th><a href="alterarUsuario.jsp?id_usuario=<%=a.getId() %>"> <img
                                     src="../img/caneta.png">

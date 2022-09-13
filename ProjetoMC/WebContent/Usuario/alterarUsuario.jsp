@@ -1,9 +1,14 @@
 <%@page import="modelo.Usuario"%>
+<%@page import="modelo.Telefone"%>
 <%@page import="dao.UsuarioDao"%>
+<%@page import="dao.TelefoneDao"%>
 <%
 	UsuarioDao usuariodao = new UsuarioDao();
+	TelefoneDao telefoneDao = new TelefoneDao();
     Usuario usuario = new Usuario();
     usuario = usuariodao.ListaUsuarioID(Integer.parseInt(request.getParameter("id_usuario")));
+    Telefone telefone = new Telefone();
+	telefone = telefoneDao.ListaTelefoneID(usuario.getTelefone());
 %>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -25,7 +30,9 @@
                 <input placeholder="Id*" hidden type="text" name="id_usuario" value="<%=usuario.getId() %>">
                 <input placeholder="Id*" disabled type="text" name="id_usuario" value="<%=usuario.getId() %>">
                 <input placeholder="Nome*" required type="text" name="nome" value="<%=usuario.getNome_usuario() %>">
-                <input placeholder="Email*" required type="text" name="email" value="<%=usuario.getEmail() %>"> 
+                <input placeholder="Email*" required type="text" name="email" value="<%=usuario.getEmail() %>">
+                 <input placeholder="Id_telefone" hidden type="text" name="id_telefone" value="<%=usuario.getTelefone() %>">
+                <input placeholder="Telefone*" required type="text" name="telefone" value="<%=telefone.getNumero() %>"> 
                 <input placeholder="Senha*" required type="text" name="senha" value="<%=usuario.getSenha()%>">
                 <input type="submit" value="Alterar">
             </form>
