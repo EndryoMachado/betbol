@@ -21,8 +21,8 @@ public class UsuarioDao {
         try {
 
             con = new Conexao();
-            con.executeUpdate("insert into usuario (nome_usuario, email, senha) values ( '"
-                    + usuario.getNome_usuario() + "',' " + usuario.getEmail() + " ',' " + usuario.getSenha() + "')");
+            con.executeUpdate("insert into usuario (nome_usuario, email, senha, telefone) values ('"
+                    + usuario.getNome_usuario() + "',' " + usuario.getEmail() + " ',' " + usuario.getSenha() + " ',' " + usuario.getTelefone() + " ') ");
             return true;
         } catch (SQLException e) {
 
@@ -46,6 +46,7 @@ public class UsuarioDao {
                 usuario.setNome_usuario(RS.getString("nome_usuario"));
                 usuario.setEmail(RS.getString("email"));
                 usuario.setSenha(RS.getString("senha"));
+                usuario.setTelefone(RS.getInt("telefone"));
                 listausuario.add(i, usuario);
                 i++;
             }
@@ -72,6 +73,7 @@ public class UsuarioDao {
                 usuario.setNome_usuario(null);
                 usuario.setEmail(null);
                 usuario.setSenha(null);
+                usuario.setTelefone((Integer) null);
                 listausuario.add(i, usuario);
                 i++;
             }
@@ -95,6 +97,7 @@ public class UsuarioDao {
             usuario.setNome_usuario(RS.getString("nome_usuario"));
             usuario.setEmail(RS.getString("email"));
             usuario.setSenha(RS.getString("senha"));
+            usuario.setTelefone(RS.getInt("telefone"));
             return usuario;
         } catch (SQLException e) {
             return null;

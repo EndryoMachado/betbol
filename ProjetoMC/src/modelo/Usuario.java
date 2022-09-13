@@ -5,7 +5,7 @@ public class Usuario {
 	private String nome_usuario;
 	private String email;
 	private String senha;
-	
+	private int telefone;
 	
 	
 	public int getId() {
@@ -32,7 +32,13 @@ public class Usuario {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	
+
+	public int getTelefone() {
+		return telefone;
+	}
+	public void setTelefone(int telefone) {
+		this.telefone = telefone;
+	}
 	
 
 }
