@@ -36,7 +36,7 @@ public class UsuarioDao {
         Conexao con = null;
         try {
             con = new Conexao();
-            ResultSet RS = con.executeQuery("SELECT * FROM usuario ");
+            ResultSet RS = con.executeQuery("SELECT * FROM usuario where status = 1");
             ArrayList<Usuario> listausuario = new ArrayList<Usuario>();
             int i = 0;
 
@@ -63,7 +63,7 @@ public class UsuarioDao {
         try {
 
             con = new Conexao();
-            ResultSet RS = con.executeQuery("SELECT * FROM usuario ");
+            ResultSet RS = con.executeQuery("SELECT * FROM usuario");
             List<Usuario> listausuario = new ArrayList<Usuario>();
             int i = 0;
 
@@ -121,8 +121,24 @@ public class UsuarioDao {
             return false;
         }
     }
+	//Delete lógico
 	
 	public boolean DeleteUsuario(int id) {
+        Conexao con = null;
+        try {
+            con = new Conexao();
+            con.executeUpdate("UPDATE usuario set status = 0 where id_usuario = " + id);
+            System.out.println("deu certo: delete from usuario where id_usuario =" + id);
+            return true;
+        } catch (SQLException e) {
+            System.out.println("deu errado Deletar Usuario()" + e);
+            return false;
+        }
+    }
+	
+	//Delete real
+	
+	/*public boolean DeleteUsuario(int id) {
         Conexao con = null;
         try {
             con = new Conexao();
@@ -133,6 +149,6 @@ public class UsuarioDao {
             System.out.println("deu errado Deletar Usuario()" + e);
             return false;
         }
-    }
+    }*/
 
 }
