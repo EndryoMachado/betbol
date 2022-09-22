@@ -8,16 +8,7 @@
 
 <% 
 	UsuarioDao usuarioDao = new UsuarioDao();
-	Usuario usuario = new Usuario();
-	TelefoneDao telefoneDao = new TelefoneDao();
-    Telefone telefone = new Telefone();
-    
-	usuario = usuarioDao.ListaUsuarioID(Integer.parseInt(request.getParameter("id_usuario")));
-	usuarioDao.DeleteUsuario(usuario.getId());
-	telefoneDao.DeleteTelefone(usuario.getTelefone());
-	
-	
-	
+	usuarioDao.DeleteUsuario(Integer.parseInt(request.getParameter("id_usuario")));
 %>
 
 <script language="JavaScript">
